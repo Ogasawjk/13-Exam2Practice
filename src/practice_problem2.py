@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and JUSTIN OGASAWARA.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -56,8 +56,39 @@ def run_test_practice_problem2a():
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
 
+    # Test1
+    seq = [3,3,3]
+    Expected = [2,2,2]
+    Actual = practice_problem2a(seq, -1)
+    print('Expected:', Expected)
+    print('  Actual:', Actual)
+
+    # Test2
+    seq = [3, 2, 1]
+    Expected = [10,9,8]
+    Actual = practice_problem2a(seq, 7)
+    print('Expected:', Expected)
+    print('  Actual:', Actual)
+
+    # Test3
+    seq = [1, -4, 5, 2]
+    Expected = [5, 0, 9, 6]
+    Actual = practice_problem2a(seq, 4)
+    print('Expected:', Expected)
+    print('  Actual:', Actual)
+
+    # Test4
+    seq = [20, 30, 40, 50, 60]
+    Expected = [10, 20, 30, 40, 50]
+    Actual = practice_problem2a(seq, -10)
+    print('Expected:', Expected)
+    print('  Actual:', Actual)
+
 
 def practice_problem2a(sequence, delta):
+    for k in range(len(sequence)):
+        sequence[k] = sequence[k] + delta
+    return sequence
     """
     What comes in:
       -- A sequence of integers, e.g. ([2, 10, 5, -20, 8])
@@ -76,15 +107,13 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
-
-
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
     # ------------------------------------------------------------------
@@ -149,8 +178,9 @@ def run_test_practice_problem2b():
     # ------------------------------------------------------------------
     st.SimpleTestCase.run_tests('practice_problem2b', tests)
 
-
 def practice_problem2b(sequence):
+
+
     """
     What comes in:
       -- A sequence of strings, e.g. ('hello', 'Bye', 'ok joe')
