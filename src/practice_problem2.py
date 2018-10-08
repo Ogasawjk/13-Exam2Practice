@@ -30,7 +30,7 @@ import simple_testing as st
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem2a()
+    #run_test_practice_problem2a()
     run_test_practice_problem2b()
 
 
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -83,7 +83,6 @@ def run_test_practice_problem2a():
     Actual = practice_problem2a(seq, -10)
     print('Expected:', Expected)
     print('  Actual:', Actual)
-
 
 def practice_problem2a(sequence, delta):
     for k in range(len(sequence)):
@@ -179,8 +178,11 @@ def run_test_practice_problem2b():
     st.SimpleTestCase.run_tests('practice_problem2b', tests)
 
 def practice_problem2b(sequence):
-
-
+    s2 = ''
+    for k in range(len(sequence)):
+        if len(sequence[k])> 0:
+            s2 = s2 + sequence[k][0]
+    return s2
     """
     What comes in:
       -- A sequence of strings, e.g. ('hello', 'Bye', 'ok joe')
@@ -200,7 +202,7 @@ def practice_problem2b(sequence):
       :type sequence [str]
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
