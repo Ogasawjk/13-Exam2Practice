@@ -30,8 +30,6 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 import time
 import sys
-
-
 def main():
     """ Calls the   TEST   functions in this module. """
 
@@ -45,8 +43,8 @@ def main():
 #    run_test_double_then_shrink()
 #    run_test_reset()
 #    run_test_steal()
-#    run_test_get_history()
-    run_test_combined_box()
+    run_test_get_history()
+#    run_test_combined_box()
 
 
 ########################################################################
@@ -227,21 +225,16 @@ class Box(object):
         #    ** TWO **   LINES OF CODE.
         ################################################################
     def shrink(self, new_volume):
-        a = len(self.contents)
         self.volume = new_volume
-        delta = a - new_volume
         new_contents = ''
         discard = ''
         if len(self.contents)>= new_volume:
             for k in range(new_volume):
                 new_contents = new_contents + self.contents[k]
-            for n in range(new_volume, new_volume+delta):
+            for n in range(new_volume, len(self.contents)):
                 discard = discard + self.contents[n]
             self.contents = new_contents
-        else:
-            self.contents = self.contents
         return discard
-
         """
         What comes in:
           -- self
@@ -438,7 +431,6 @@ class Box(object):
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
     def combined_box(self, other_box):
-        return Box(self.contents + other_box.contents, self.volume + other_box.volume)
         """
         What comes in:
           -- self
@@ -454,6 +446,7 @@ class Box(object):
         Type hints:
           :type other_box: Box
         """
+        return Box(self.contents + other_box.contents, self.volume + other_box.volume)
         # --------------------------------------------------------------
         # DONE: 10. Implement and test this function.
         #     The testing code is already written for you (above).

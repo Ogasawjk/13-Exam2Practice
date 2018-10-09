@@ -409,10 +409,10 @@ def run_test_practice_problem3d():
     st.SimpleTestCase.run_tests('practice_problem3d', tests)
 
 def practice_problem3d(sequence):
-    for k in range(len(sequence)):
-        if sequence[k] == 0:
-            return k
-    return -1
+    #for k in range(len(sequence)):
+        #if sequence[k] == 0:
+            #return k
+    #return -1
     """
     What comes in: A sequence of integers.
     What goes out: Returns the first (leftmost) place (index)
@@ -450,20 +450,26 @@ def practice_problem3d(sequence):
 
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    #DONE: 6. Just ABOVE this DONE, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
-    #       -- Your FIRST solution (ABOVE this TODO)
+    #       -- Your FIRST solution (ABOVE this DONE)
     #            should be a solution that IGNORES
     #              practice_problem3c (the previous problem).
     #
-    #       -- Your SECOND solution (BELOW this TODO)
+    #       -- Your SECOND solution (BELOW this DONE)
     #            should be a solution that USES (calls)
     #              practice_problem3c.
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
+    if len(practice_problem3c(sequence))!= 0:
+        a = practice_problem3c(sequence)
+        return a[0]
+    else:
+        return -1
+
 def run_test_practice_problem3e():
     """ Tests the    practice_problem3e    function. """
     # ------------------------------------------------------------------

@@ -85,9 +85,6 @@ def run_test_practice_problem2a():
     print('  Actual:', Actual)
 
 def practice_problem2a(sequence, delta):
-    for k in range(len(sequence)):
-        sequence[k] = sequence[k] + delta
-    return sequence
     """
     What comes in:
       -- A sequence of integers, e.g. ([2, 10, 5, -20, 8])
@@ -105,6 +102,9 @@ def practice_problem2a(sequence, delta):
       :type sequence: [int]
       :type delta:    int
     """
+    for k in range(len(sequence)):
+        sequence[k] = sequence[k] + delta
+    return sequence
     ####################################################################
     # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
@@ -178,11 +178,6 @@ def run_test_practice_problem2b():
     st.SimpleTestCase.run_tests('practice_problem2b', tests)
 
 def practice_problem2b(sequence):
-    s2 = ''
-    for k in range(len(sequence)):
-        if len(sequence[k])> 0:
-            s2 = s2 + sequence[k][0]
-    return s2
     """
     What comes in:
       -- A sequence of strings, e.g. ('hello', 'Bye', 'ok joe')
@@ -201,6 +196,11 @@ def practice_problem2b(sequence):
     Type hints:
       :type sequence [str]
     """
+    s2 = ''
+    for k in range(len(sequence)):
+        if len(sequence[k])> 0:
+            s2 = s2 + sequence[k][0]
+    return s2
     ####################################################################
     # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
@@ -209,8 +209,6 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
-
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
